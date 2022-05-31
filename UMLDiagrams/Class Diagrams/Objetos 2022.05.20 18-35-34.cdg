@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Objetos">
+  <ClassDiagramComponents>
+    <Class name="Perro" package="Objetos" visibility="public" xPosition="5.0" yPosition="4.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="raza" type="RazaPerro" visibility="private"/>
+        <Field name="edad" type="Integer" visibility="private"/>
+        <Field name="tamanio" type="TamanioPerro" visibility="private"/>
+        <Field name="duenio" type="Persona" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="RazaPerro" name="raza"/>
+          <Argument type="Integer" name="edad"/>
+          <Argument type="TamanioPerro" name="tamanio"/>
+          <Argument type="Persona" name="duenio"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="getRaza" returnType="RazaPerro" visibility="public"/>
+        <Method name="setRaza" returnType="void" visibility="public">
+          <Argument type="RazaPerro" name="raza"/>
+        </Method>
+        <Method name="getEdad" returnType="Integer" visibility="public"/>
+        <Method name="setEdad" returnType="void" visibility="public">
+          <Argument type="Integer" name="edad"/>
+        </Method>
+        <Method name="getTamanio" returnType="TamanioPerro" visibility="public"/>
+        <Method name="setTamanio" returnType="void" visibility="public">
+          <Argument type="TamanioPerro" name="tamanio"/>
+        </Method>
+        <Method name="getDuenio" returnType="Persona" visibility="public"/>
+        <Method name="setDuenio" returnType="void" visibility="public">
+          <Argument type="Persona" name="duenio"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Persona" package="Objetos" visibility="public" xPosition="566.0" yPosition="48.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="apellido" type="String" visibility="private"/>
+        <Field name="edad" type="Integer" visibility="private"/>
+        <Field name="documento" type="String" visibility="private"/>
+        <Field name="sexo" type="SexoHumano" visibility="private"/>
+        <Field name="perro" type="List&lt;Perro&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="getApellido" returnType="String" visibility="public"/>
+        <Method name="setApellido" returnType="void" visibility="public">
+          <Argument type="String" name="apellido"/>
+        </Method>
+        <Method name="getEdad" returnType="Integer" visibility="public"/>
+        <Method name="setEdad" returnType="void" visibility="public">
+          <Argument type="Integer" name="edad"/>
+        </Method>
+        <Method name="getDocumento" returnType="String" visibility="public"/>
+        <Method name="setDocumento" returnType="void" visibility="public">
+          <Argument type="String" name="documento"/>
+        </Method>
+        <Method name="getSexo" returnType="SexoHumano" visibility="public"/>
+        <Method name="setSexo" returnType="void" visibility="public">
+          <Argument type="SexoHumano" name="sexo"/>
+        </Method>
+        <Method name="getPerro" returnType="List&lt;Perro&gt;" visibility="public"/>
+        <Method name="setPerro" returnType="void" visibility="public">
+          <Argument type="List&lt;Perro&gt;" name="perro"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="duenio" source="Objetos.Perro" target="Objetos.Persona" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="mascota" source="Objetos.Persona" target="Objetos.Perro" type="Aggregation" sourceCardinality="0..1" targetCardinality="0..*" collectionType="List"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
